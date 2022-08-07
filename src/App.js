@@ -4,13 +4,17 @@ import SegundoComponent from "./Components/SegundoComponent";
 import TemplateExpressions from "./Components/TemplateExpressions";
 import MyComponents from "./Components/MyComponents";
 import Events from "./Components/Events";
+import city from "./assets/city.jpg" // Import de IMG 
 
+// Style / CSS
 import "./styles.css";
 
 export default function App() {
   return (
     <div className="App">
       <h1>Fundamentos React</h1>
+      <img src="/img1.jpg" alt="Paisagem" />  {/* Import Img de Public*/}
+      <img src={city} alt="Cidade" /> {/* Import Img de Assets*/}
       <FirstComponent />
       <SegundoComponent />
       <TemplateExpressions />
