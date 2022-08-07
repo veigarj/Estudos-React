@@ -5,6 +5,7 @@ import TemplateExpressions from "./Components/TemplateExpressions";
 import MyComponents from "./Components/MyComponents";
 import Events from "./Components/Events";
 import city from "./assets/city.jpg"; // Import de IMG
+import ListRender from "./Components/ListRender.js";
 
 // Style / CSS
 import "./styles.css";
@@ -22,6 +23,7 @@ export default function App() {
       <MyComponents />
       <Events />
       <ManageData />
+      <ListRender />
     </div>
   );
 }
