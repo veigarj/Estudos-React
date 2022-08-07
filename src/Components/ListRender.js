@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const ListRender = () => {
-  const [list] = useState(["Matheus", "Pedro", "Josias"]);
+  const [list] = useState(["Glauco", "Pedro", "Josias"]);
 
   const [users, setUsers] = useState([
-    { id: 1, name: "Matheus", age: 31 },
+    { id: 1, name: "Glauco", age: 31 },
     { id: 2, name: "Jones", age: 19 },
     { id: 3, name: "Scorpion", age: 201 }
   ]);
@@ -25,6 +25,7 @@ const ListRender = () => {
           <li key={i}>{item}</li>
         ))}
       </ul>
+      {/* render com Key mais utilizado */}
       <ul>
         {users.map((user) => (
           <li key={user.id}>
