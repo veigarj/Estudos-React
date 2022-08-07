@@ -7,12 +7,17 @@ import Events from "./Components/Events";
 import city from "./assets/city.jpg"; // Import de IMG
 import ListRender from "./Components/ListRender.js";
 import ConditionalRender from "./Components/ConditionalRender.js";
+import ShowUserName from "./Components/ShowUserName.js";
+import { useState } from "react";
 
 // Style / CSS
 import "./styles.css";
 import ManageData from "./Components/ManageData";
 
 export default function App() {
+  const name = "Pedro";
+  const [userName] = useState("Maria");
+
   return (
     <div className="App">
       <h1>Fundamentos React</h1>
@@ -26,6 +31,8 @@ export default function App() {
       <ManageData />
       <ListRender />
       <ConditionalRender />
+      <ShowUserName name={userName} /> {/* Props com useState*/}
+      <ShowUserName name={name} /> {/* Props puxando de uma const*/}
     </div>
   );
 }
