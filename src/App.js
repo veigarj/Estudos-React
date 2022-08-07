@@ -2,6 +2,7 @@
 import FirstComponent from "./Components/FirstComponent";
 import SegundoComponent from "./Components/SegundoComponent";
 import TemplateExpressions from "./Components/TemplateExpressions";
+import MyComponents from "./Components/MyComponents";
 import "./styles.css";
 
 export default function App() {
@@ -11,6 +12,8 @@ export default function App() {
       <FirstComponent />
       <SegundoComponent />
       <TemplateExpressions />
+      <MyComponents />
+      
     </div>
   );
 }
