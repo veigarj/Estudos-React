@@ -6,6 +6,7 @@ import MyComponents from "./Components/MyComponents";
 import Events from "./Components/Events";
 import city from "./assets/city.jpg"; // Import de IMG
 import ListRender from "./Components/ListRender.js";
+import ConditionalRender from "./Components/ConditionalRender.js";
 
 // Style / CSS
 import "./styles.css";
@@ -24,6 +25,7 @@ export default function App() {
       <Events />
       <ManageData />
       <ListRender />
+      <ConditionalRender />
     </div>
   );
 }
