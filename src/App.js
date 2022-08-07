@@ -9,6 +9,7 @@ import ListRender from "./Components/ListRender.js";
 import ConditionalRender from "./Components/ConditionalRender.js";
 import ShowUserName from "./Components/ShowUserName.js";
 import { useState } from "react";
+import CarDetails from "./Components/CarDetails.js";
 
 // Style / CSS
 import "./styles.css";
@@ -29,10 +30,14 @@ export default function App() {
       <MyComponents />
       <Events />
       <ManageData />
+      {/* Render*/}
       <ListRender />
       <ConditionalRender />
+      {/* Props*/}
       <ShowUserName name={userName} /> {/* Props com useState*/}
       <ShowUserName name={name} /> {/* Props puxando de uma const*/}
+      {/* Destructuring*/}
+      <CarDetails brand="VW" km={10000} color="Azul" />
     </div>
   );
 }
