@@ -1,16 +1,19 @@
+import { useState } from "react";
 import React from "react";
 
 const ConditionalRender = () => {
-  const x = true;
+  const [x] = useState(false);
 
-  const name = "Glauco";
+  const [name, setName] = useState("Glauco");
 
   return (
     <div>
       <h3>Isso será exibido?</h3>
       {x && <p>Se x for true sim!</p>}
+      {!x && <p>Agora x é Falso</p>}
+
       <h3>Render ternário:</h3>
-      {name === "João" ? (
+      {name === "Joao" ? (
         <div>
           <p>O nome é João</p>
         </div>
@@ -19,6 +22,7 @@ const ConditionalRender = () => {
           <p>Nome não encontrado!</p>
         </div>
       )}
+      <button onClick={() => setName("Joao")}>Clique aqui</button>
     </div>
   );
 };
