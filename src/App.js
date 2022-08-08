@@ -12,7 +12,7 @@ import { useState } from "react";
 import CarDetails from "./Components/CarDetails.js";
 import Fragment from "./Components/Fragment.js";
 import Container from "./Components/Container.js";
-import ExcuteFunction from "./Components/ExcuteFunction.js";
+import ExecuteFunction from "./Components/ExecuteFunction.js";
 
 // Style / CSS
 import "./styles.css";
@@ -27,6 +27,10 @@ export default function App() {
     { id: 2, brand: "Kia", color: "Branco", newCar: false, km: 34343 },
     { id: 1, brand: "Renault", color: "Azul", newCar: false, km: 10234 }
   ];
+
+  function showMessage() {
+    console.log("Evento do Component Pai");
+  }
 
   return (
     <div className="App">
@@ -53,6 +57,7 @@ export default function App() {
       {/* Loop em Array de Objetos*/}
       {cars.map((car) => (
         <CarDetails
+          key={car.id}
           brand={car.band}
           color={car.color}
           km={car.km}
@@ -68,7 +73,7 @@ export default function App() {
       <Container myValue="testing 2">
         <h4>Testando o Container</h4>
       </Container>
-      <ExcuteFunction />
+      <ExecuteFunction myFunction={showMessage} />
     </div>
   );
 }
