@@ -8,11 +8,13 @@ import city from "./assets/city.jpg"; // Import de IMG
 import ListRender from "./Components/ListRender.js";
 import ConditionalRender from "./Components/ConditionalRender.js";
 import ShowUserName from "./Components/ShowUserName.js";
-import { useState } from "react";
+import { useState } from "react"; // Importar para usar useState
 import CarDetails from "./Components/CarDetails.js";
 import Fragment from "./Components/Fragment.js";
 import Container from "./Components/Container.js";
 import ExecuteFunction from "./Components/ExecuteFunction.js";
+import Message from "./Components/Message.js";
+import ChangeMessageState from "./Components/ChangeMessageState.js";
 
 // Style / CSS
 import "./styles.css";
@@ -31,6 +33,12 @@ export default function App() {
   function showMessage() {
     console.log("Evento do Component Pai");
   }
+
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
 
   return (
     <div className="App">
@@ -74,6 +82,8 @@ export default function App() {
         <h4>Testando o Container</h4>
       </Container>
       <ExecuteFunction myFunction={showMessage} />
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage} />
     </div>
   );
 }
