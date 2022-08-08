@@ -38,8 +38,9 @@ export default function App() {
       <ShowUserName name={name} /> {/* Props puxando de uma const*/}
       {/* Destructuring*/}
       <CarDetails brand="VW" km={10000} color="Azul" newCar={false} />
-      <CarDetails brand="Ford" km={10000} color="Vermelho" newCar={true} />
-      <CarDetails brand="Fiat" km={10000} color="Preto" newCar={false} />
+       {/* Reaproveitando*/}
+      <CarDetails brand="Ford" km={0} color="Vermelho" newCar={true} />
+      <CarDetails brand="Fiat" km={4500} color="Preto" newCar={false} />
     </div>
   );
 }
