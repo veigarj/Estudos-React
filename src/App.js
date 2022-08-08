@@ -19,6 +19,11 @@ export default function App() {
   const name = "Pedro";
   const [userName] = useState("Maria");
 
+  const car = 
+  [id: 1, brand: "Ferrari", color: "Vermelho", newCar: true, km: 0],
+  [id: 2, brand: "Kia", color: "Branco", newCar: false, km: 34343],
+  [id: 1, brand: "Renault", color: "Azul", newCar: false, km: 10234],
+
   return (
     <div className="App">
       <h1>Fundamentos React</h1>
@@ -41,6 +46,16 @@ export default function App() {
        {/* Reaproveitando*/}
       <CarDetails brand="Ford" km={0} color="Vermelho" newCar={true} />
       <CarDetails brand="Fiat" km={4500} color="Preto" newCar={false} />
+      
+      {/* Loop em Array de Objetos*/}
+      {car.map((car) => (
+        <CarDatails
+        brand={car.band}
+        color={car.color}
+        km={car.km}
+        newCar={car.newCar}
+        />
+      ))}
     </div>
   );
 }
