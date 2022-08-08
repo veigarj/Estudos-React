@@ -12,6 +12,7 @@ import { useState } from "react";
 import CarDetails from "./Components/CarDetails.js";
 import Fragment from "./Components/Fragment.js";
 import Container from "./Components/Container.js";
+import ExcuteFunction from "./Components/ExcuteFunction.js";
 
 // Style / CSS
 import "./styles.css";
@@ -67,6 +68,7 @@ export default function App() {
       <Container myValue="testing 2">
         <h4>Testando o Container</h4>
       </Container>
+      <ExcuteFunction />
     </div>
   );
 }
