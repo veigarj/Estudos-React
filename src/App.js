@@ -15,6 +15,7 @@ import Container from "./Components/Container.js";
 import ExecuteFunction from "./Components/ExecuteFunction.js";
 import Message from "./Components/Message.js";
 import ChangeMessageState from "./Components/ChangeMessageState.js";
+import MyForm from "./Components/MyForm.js"
 
 // Style / CSS
 import "./styles.css";
@@ -82,6 +83,7 @@ export default function App() {
       <ExecuteFunction myFunction={showMessage} />
       <Message msg={message} />
       <ChangeMessageState handleMessage={handleMessage} />
+      <MyForm />
     </div>
   );
 }
