@@ -45,8 +45,6 @@ export default function App() {
       <h1>Fundamentos React</h1>
       <img src="/img1.jpg" alt="Paisagem" /> {/* Import Img de Public*/}
       <img src={city} alt="Cidade" /> {/* Import Img de Assets*/}
-      <FirstComponent />
-      <SegundoComponent />
       <TemplateExpressions />
       <MyComponents />
       <Events />
