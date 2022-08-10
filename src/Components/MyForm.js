@@ -2,7 +2,7 @@ import "./MyForm.css";
 
 import { useState } from "react";
 
-const MyForm = ({user}) => {
+const MyForm = ({ user }) => {
   // 3 Gerenciamento de Dados
   const [name, setName] = useState(user ? user.name : "");
   const [email, setEmail] = useState(user ? user.email : "");
@@ -17,8 +17,17 @@ const MyForm = ({user}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Enviando o formulario");
-    console.log(name, email);
+    console.log(name, email, bio);
+  
+    // 7 - Limpar Form dentro de handleSubmit
+    setName("");
+    setEmail("");
+    setBio("");
   };
+
+  const [bio, setBio] = useState("")
+
+  
 
   return (
     <div>
@@ -39,6 +48,7 @@ const MyForm = ({user}) => {
         </div>
         {/* 2 => Label envolvido em input (Mais Utilizado) com onChange */}
         <label>
+          {/* 3 = simplificando a manipulacao de States  */}
           <span>E-mail:</span>
           <input
             type="email"
@@ -47,10 +57,14 @@ const MyForm = ({user}) => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-          {/* 3 = simplificando a manipulacao de States  */}
+          {/* 8 - Tesxtarea*/}
+          <span>Bio:</span>
+          <textarea name="bio"
+          placeholder="Descricao do usuario"
+          onChange={(e) => setBio(e.target.value)}
+          value={bio} ></textarea>
         </label>
         <input type="submit" value="Enviar" />
-        
       </form>
     </div>
   );
