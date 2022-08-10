@@ -17,17 +17,18 @@ const MyForm = ({ user }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Enviando o formulario");
-    console.log(name, email, bio);
-  
+    console.log(name, email, bio, role);
+
     // 7 - Limpar Form dentro de handleSubmit
     setName("");
     setEmail("");
     setBio("");
   };
+  // 8 - Bio
+  const [bio, setBio] = useState("");
 
-  const [bio, setBio] = useState("")
-
-  
+  //9 -select
+  const [role, setRole] = useState("");
 
   return (
     <div>
@@ -59,10 +60,21 @@ const MyForm = ({ user }) => {
           />
           {/* 8 - Tesxtarea*/}
           <span>Bio:</span>
-          <textarea name="bio"
-          placeholder="Descricao do usuario"
-          onChange={(e) => setBio(e.target.value)}
-          value={bio} ></textarea>
+          <textarea
+            name="bio"
+            placeholder="Descricao do usuario"
+            onChange={(e) => setBio(e.target.value)}
+            value={bio}
+          ></textarea>
+        </label>
+        {/* 9 - Select*/}
+        <label>
+          <span>Funcao no sistema</span>
+          <select name="role" onChange={(e) => setRole(e.target.value)}>
+            <option value="User">Usuario</option>
+            <option value="Editor">Editor</option>
+            <option value="Adim">Administrador</option>
+          </select>
         </label>
         <input type="submit" value="Enviar" />
       </form>
