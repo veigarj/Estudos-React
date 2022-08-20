@@ -1,21 +1,21 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 // 4 Custom Hooks
-import { useFetch } from './hooks/useFetch';
+import { useFetch } from "./hooks/useFetch";
 
-const url = 'http://localhost:3000/products';
+const url = "http://localhost:3000/products";
 
 function App() {
   const [products, setProducts] = useState([]);
 
   // 4 Custom Hooks
-  const { data: items } = useFetch(url);
+  const { data: items, httpConfig } = useFetch(url);
 
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
 
   // 1 - resgatando dados
   // useEffect(() => {
@@ -35,26 +35,29 @@ function App() {
 
     const product = {
       name,
-      price,
+      price
     };
 
     // Requisição tipo post
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(product),
-    });
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(product)
+    // });
 
-    // carregamento dinamico
-    const addedProduct = await res.json();
+    // // carregamento dinamico
+    // const addedProduct = await res.json();
 
-    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+    // setProducts((prevProducts) => [...prevProducts, addedProduct]);
+
+    // 5 - Refatorando Post
+    httpConfig(product, "POST");
 
     // resetar input (value) depois de enviar
-    setName('');
-    setPrice('');
+    setName("");
+    setPrice("");
   };
 
   return (
@@ -71,7 +74,7 @@ function App() {
               ))}
           </ul>
           <div className="add-product">
-            {' '}
+            {" "}
             {/* Formulario de envio pro Back-and */}
             <form onSubmit={handleSubmit}>
               <label>
