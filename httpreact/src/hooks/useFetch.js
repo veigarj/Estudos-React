@@ -10,20 +10,18 @@ export const useFetch = (url) => {
   const [method, setMethod] = useState(null);
   const [callFetch, setCallFetch] = useState(false);
 
-  const httpConfig = (data, method) {
-    if(method === "POST") (
+  const httpConfig = (data, method) => {
+    if (method === "POST") {
       setConfig({
         method,
         headers: {
-          "Content-type": "application/json",
+          "Content-type": "application/json"
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
       });
-
-      setMethod(method)
-    );
-
-  }
+      setMethod(method);
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
